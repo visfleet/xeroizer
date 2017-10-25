@@ -91,7 +91,6 @@ module Xeroizer
       has_many     :credit_notes
       has_many     :prepayments
 
-      validates_presence_of :date, :due_date, :unless => :new_record?
       validates_inclusion_of :type, :in => INVOICE_TYPES
       validates_inclusion_of :status, :in => INVOICE_STATUSES, :unless => :new_record?
       validates_inclusion_of :line_amount_types, :in => LINE_AMOUNT_TYPES, :unless => :new_record?

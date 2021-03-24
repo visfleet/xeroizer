@@ -4,7 +4,7 @@ require 'xeroizer/models/line_amount_type'
 module Xeroizer
   module Record
     class LineItemModel < BaseModel
-
+      set_permissions
     end
 
     class LineItem < Base
@@ -23,6 +23,8 @@ module Xeroizer
       string  :line_item_id
 
       has_many  :tracking, :model_name => 'TrackingCategoryChild'
+
+      validates_presence_of :description
 
       def initialize(parent)
         super(parent)
